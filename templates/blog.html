@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<div>
+
+    <div style="background: url({%static 'images/b2.jpg' %});width:100%;height:350px;">
+    <div style="background:rgba(0, 0, 0,0.30);height:350px;width:100%;padding-top:160px">
+       <center><p style="color:white;font-size: 70px;font-weight:500"></p></center>
+    </div>  
+    </div>
+      
+</div>
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class="row"> 
+    <div class="col-12">
+        {% for i in data %}
+        <div class="row" style="border-left:2px solid red">
+            <div class="col-7">
+                <h3 class="card-title" style="color:blue"  data-aos="flip-left"
+
+                data-aos-duration="1200">{{i.title}}</h3>
+                <br>
+                <h5 class="card-text">{{i.description|truncatechars:200|striptags}}</h5>
+                <br>
+                <a href="{% url 'detailblog' id=i.id %}" class="btn btn-danger" style="font-size:20px">Read More</a>
+                <br>
+                <p style="font-size:18px;text-align:right;font-weight: 500;"><span style="color:red">---&nbsp;</span>{{i.writer}}</p>
+            </div>
+
+            <div class="col-5">
+                <img src="{{i.image.url}}" data-aos="zoom-out" data-aos-duration="700" class="shadow" alt="..." style="height:250px;width:430px">
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        {% endfor %}
+    </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

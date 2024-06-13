@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+<div style="background: rgba(5,5,111,0.09);">
+<div class="container">
+    
+    
+    <div class="row ">
+        <div class="col-7 mt-5 mb-5 ">
+            <p style="font-family: garamond;font-size:60px;font-weight: 600;color:blue"><i class="icofont-airplane me-3 " style="color:red"></i>{{data.name}}</p>
+            <br>
+                <br>
+                <img src="{{data.image.url}}" data-aos="fade-right"
+                data-aos-easing="linear"
+                data-aos-duration="500" class="card-img-top" alt="..." style="height:300px;width:600px">
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="card-text" style="color:blue;font-size:21px">{{data.description|linebreaksbr}}</p>
+        </div>
+        <div class="col-5 mt-5 ps-3" style="border-left:1px solid red">
+            <br>
+            <br>
+            <br>
+            <div class="ps-4" >
+                {% for i in item %}
+                <p class="ps-4 v1"  style="background: blue;border-radius:10px;width:400px"><a href="{% url 'coachingdetails' id=i.id %}" style="font-size:30px;border-radius:5px;text-decoration:none;color:white" >{{i.name}}</a></p>
+                <br>
+            
+                {% endfor %}
+            </div>
+            <br>
+            <br>
+            <br>
+            <video  width="500px" height="400px" autoplay muted loop controls preload="auto" style="margin-left: 50px;">
+                <source src="{%static 'images/vid.mp4' %}"  >
+            </video>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+
+
+{% endblock %}

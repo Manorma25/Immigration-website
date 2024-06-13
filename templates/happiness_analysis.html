@@ -1,0 +1,45 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ana:hover{color:rgb(0, 119, 255)}
+        #ana {transition: all ease 0.3s;}
+    </style>
+</head>
+<body style="background: url({%static 'images/a.jpg' %});background-repeat:no-repeat;width:100%;height:100%;background-size:cover">
+    <div style="background:rgba(0,0,0,0.5);height:100%;width:100%">
+
+    <div class="row">
+
+        <div class="col-md-12">
+         <center><p  style="color:red;font-size:40px;font-weight:600;text-align:center;font-family:gordana;background: rgba(255,255,255,0.80);width:1200px;border-radius:50px;border:2px solid red">Analaysis of Happiness Index  </p></center>
+         <center><div class=" pt-2 pb-2" style="background:rgba(177, 62, 98, 0.2) ;width:1200px;font-size:20x;border-radius: 50px;">
+            <a href="{% url 'Happiness1' %}" style="color:white;text-decoration: none;"><p class="m-4 " id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Happiness Index of a Country for all years.</p></a>
+            <a href="{% url 'Happiness2' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Happiness Index of a Country for a rang of years.</p></a>
+            <a href="{% url 'Happiness3' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Comparison of Happiness Index Between two Countries.</p></a>
+            <a href="{% url 'Happiness4' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Comparison of Happiness Index Between two Countries for a range of years.</p></a>
+            <a href="{% url 'Happiness5' %}" style="color:white;text-decoration: none;"><p class="m-4"  id="ana"style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Comparison of Happiness Index Between three Countries.</p></a>
+            <a href="{% url 'Happiness6' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Comparison of Happiness Index Between three countries for a range of years.</p></a>
+            <a href="{% url 'Happiness7' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Demonstrating the Countries which are having maximum Happiness Index.</p></a>
+            <a href="{% url 'Happiness8' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Demonstrating the Countries which are having minimum Happiness Index</p></a>
+            <a href="{% url 'Happiness9' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Demonstrating Bubble Map for all countries over the years.</p></a>
+            <a href="{% url 'Happiness10' %}" style="color:white;text-decoration: none;"><p class="m-4" id="ana" style="font-family: lucida sans;font-weight: 500;text-align: left;"><i class="icofont-rounded-double-right icofont-1x"></i>&nbsp;Demonstrating Bubble Map for all countries over for a range of years.</p></a>
+           
+         </div></ceter>
+
+        </div>
+
+    </div>
+   </div>
+
+    
+</body>
+</html>
+
+{% endblock %}

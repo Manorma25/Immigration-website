@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+
+<div style="background: rgba(246, 31, 31,0.05);">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-3 mb-5 ">
+            <div>
+                <p  style="color:blue;font-size:70px;font-weight:600;text-align:center;font-family: Gordana;"  data-aos="fade-right" data-aos-duration="700">{{data.name}}</p>
+                <br>
+                <br>
+                <center><img  src="{{data.image2.url}}" height="400px" width="700px"  style="margin-right:50px;border-radius:25px;filter:drop-shadow(10px 10px 10px gray);" data-aos="zoom-in" data-aos-duration="1500"></center>
+                <br>
+                <br>
+                <br>
+               
+                <h5 class="" style="font-weight:400;color:blue;text-align: justify;">{{data.about|linebreaksbr}}</h5>
+                <br>
+                <h3 style="color:red">Documents Required:</h3>
+                <br>
+                <h5 class="" style="font-weight:400;color:blue">{{data.doc|linebreaksbr}}</h5>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}

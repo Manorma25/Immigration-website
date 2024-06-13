@@ -1,0 +1,47 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<div>
+
+    <div style="background: url({%static 'images/b9.jpg' %});width:100%;height:300px;background-">
+    <div style="background:rgba(0, 0, 0,0.20);height:300px;width:100%;padding-top:160px">
+       <center><p style="color:white;font-size: 70px;font-weight:500"></p></center>
+    </div>  
+    </div>
+      
+</div>
+
+<div style="background:rgba(0, 0, 179, 0.03);">
+<div class="container">
+    <br>
+    <br>
+    <div class="row">
+        <p style="font-variant: small-caps;color:blue;font-size:50px;font-weight: 500;text-align: center;" data-aos="flip-right"  data-aos-duration="3000">Visa Categories</p>
+        
+        {% for i in data %}
+        
+
+        <div class="col-md-3 mt-4 mb-5 ">
+            
+            <div class="card pt-3 " data-aos="zoom-out"  data-aos-duration="1400" style="width: 18rem;box-shadow:2px 2px 10px  red">
+                <center><img src="{{i.image1.url}}" class="card-img-top" alt="..." style="height:120px;width:120px;"></center>
+                <div class="card-body">
+                  <h5 class="card-title" style="color:rgb(248, 64, 64)">{{i.name}}</h5>
+                  <p class="card-text">{{i.about|truncatechars:50}}</p>
+                  <a href="{% url 'visadetail' id=i.id %}" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+
+
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <br>
+</div>
+</div>
+
+
+{% endblock %}

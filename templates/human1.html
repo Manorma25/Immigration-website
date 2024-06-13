@@ -1,0 +1,52 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ana:hover{color:rgb(0, 85, 255)}
+        #ana {transition: all ease 0.3s;}
+    </style>
+</head>
+<body style="background: url({%static 'images/a.jpg' %});background-repeat:no-repeat;width:100%;height:100%;background-size:cover">
+    <div style="background:rgba(0,0,0,0.5);height:100%;width:100%">
+
+    <div class="row">
+
+        <div class="col-md-12" >
+         <center><p class="m-5" style="color:red;font-size:40px;font-weight:600;text-align:center;font-family:gordana;background: rgba(255,255,255,0.80);width:1200px;border-radius:50px;border:2px solid red">Human Development Index of a Country for all years</p></center>
+         <center>
+            <form class=" pt-5 pb-2 shadow" style="background:rgba(177, 62, 98, 0.2) ;
+            width:1200px;font-size:20x;border-radius: 50px;" method="POST" action="">
+                {% csrf_token %}
+            <select class="ps-2 pt-2 pb-3" name="country" style="height:50px;width:280px;color:gray;width:1100px;border-radius: 10px;" value="country" required>
+                <option hidden>Select Country</option> 
+                <option style="color:rgb(5,5,111)" value="Canada">Canada</option>
+                <option style="color:rgb(5,5,111)" value="France">France</option>
+                <option style="color:rgb(5,5,111)" value="Germany">Germany</option>
+                <option style="color:rgb(5,5,111)" value="South Korea">South Korea</option>
+                <option style="color:rgb(5,5,111)" value="England">England</option>
+                <option style="color:rgb(5,5,111)" value="United States">USA</option>
+              
+            </select>  
+            <br>
+            
+            <button  class="btn btn-danger text-light m-5 ps-4 pe-4 pt-2 pb-2 fs-5" type="submit" >Analysis</button>
+        </form></center>
+
+        </div>
+        {% if graph %}
+        {{ graph|safe }}
+        {% endif %}
+    </div>
+   </div>
+
+    
+</body>
+</html>
+
+{% endblock %}

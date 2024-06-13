@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+
+<div style="background: rgba(251, 32, 32,0.10);">
+<div class="container">
+    <br>
+    
+    <div class="row ">  
+        
+        <div class="col-md-12 mt-3 mb-5 ">
+            
+            <div>
+                <h1 class="" data-aos="fade-right" data-aos-duration="1200" style="color:blue;"><span style="border-bottom:2px solid red;font-family: georgia;">{{data.title}}</span></h1>
+                <img  src="{{data.image.url}}" data-aos="zoom-in" data-aos-duration="1500" height="400px" width="700px" ALIGN="right"   style="margin-left:30px;margin-right:50px;border-radius:25px;filter:drop-shadow(10px 10px 10px gray);margin-top:50px;margin-bottom:30px">
+                <br>
+                <br>
+                  <h5 class="" style="font-weight:400;color:black;font-family: gordana;">{{data.description|striptags|linebreaksbr}}</h5>
+                  <br>
+                  <p style="color:blue;font-size:30px;font-weight:400;text-align: right;"><span style="color:red">---</span>{{data.writer}}</p>
+                  <br>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immigration</title>
+</head>
+<body style="background: rgba(5,5,111,0.05);">
+
+<div class="container">
+
+    <p class="mt-5" style="font-size:40px;font-weight:600;text-align:center;color:Blue;font-family:Gordana">Latest News</p>
+
+<div class="row mt-5">
+    {% for i in k %}
+    <div class="col-md-4   " style="height:600px">
+        <div class="cart  border shadow"  data-aos="zoom-in-up">
+            <img src="{{i.urlToImage}}" alt="" height="280px" width="100px" class="card-img-top">
+            <div class="card-body border shadow">
+                <h5 class="card-title" title="{{i.title}}" style="color:blue">
+               {{i.title|truncatechars:50}}</h5>
+               <p class="card-text">{{i.content|truncatechars:150}}</p>
+               <a href="{{i.url}}" target="_blank" class="button"><b>Click here</b></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+</body>
+</html>
+{% endblock %}
+
+
+
+

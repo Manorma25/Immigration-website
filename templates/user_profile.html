@@ -1,0 +1,173 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+<style>
+
+   input {
+
+       display: none;
+
+       margin-left: 400px;
+
+   }
+
+   label {
+
+       height: 50px;
+
+       width: 150px;
+
+       border-radius: 6px;
+
+       border: 1px solid #000;
+
+   }
+
+   label:hover {
+
+       color: red;
+
+       border: 1px dashed red;
+
+   }
+
+</style>
+</head>
+<body>
+   
+
+<div style="background: rgba(40, 40, 191, 0.2)">
+<div class="container">
+<div class="row">
+<div class="col-md-2"></div>
+  
+<!--<div class="col-md-4">  
+   <img src="{%static 'images/profile.png' %}" width="150px" height="150px" style="border-radius:50px;">
+   <br>
+   <h2 style="font-family:sans-serif;color:blue">Name:{{user.nm}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Email:{{user.em}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Birthday:{{user.birthday}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Qualifications:{{user.qualifications}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Country:{{user.country}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">State:{{user.state}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Pincode:{{user.pincode}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Hobbies:{{user.hobbies}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Gender:{{user.gender}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Contact:{{user.contact}}</h2>
+   <h2 style="font-family:sans-serif;color:blue">Address:{{user.address}}</h2>
+</div>-->
+
+<div class="col-md-7">
+
+   <div class="row">
+      <div class="col-4">
+         {% if msg == 'success' %}
+         <img src="{{user.image.url}}" width="200px" height="200px" style="border-radius: 100px;" >
+         {% else %}
+         <img src="{{user.image.url}}" width="200px" height="200px" style="border-radius: 100px;"  >
+         {% endif %}
+
+         <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+           
+
+            <input type="file" id="file" name="file1" style="margin-bottom: 10px;"> 
+             
+<br>
+              <label for="file" style="margin-left:30px; padding:3px;font-size:15px;padding-left:20px;padding-top:8px;">CHOOSE PHOTO</label>
+
+              <div id="file-selected-message" style="display:none;margin-left:30px; ">
+
+                  <p style="padding-top:10px;">File selected:&nbsp; <span id="file-name"></span></p>
+
+              </div>
+            <button class="btn btn-primary" type="submit" style="margin-top:10px;margin-left:57px"> Upload </button>
+         </form>
+
+
+
+
+
+         <!--{% if msg == 'success' %}
+                  <img src="{{user.profile.url}}" style="width:100%;border:2px solid black;border-radius: 0%;height:150px;margin-left: 100px;margin-bottom: 20px;" class="mt-5"  >
+                  {% else %}
+                      <img src="{{user.profile.url}}" style="width:100%;border:2px solid black;border-radius: 0%;height:150px;margin-left: 100px;margin-bottom: 20px;" class="mt-5">
+           {% endif %}-->
+
+      </div>
+
+      <div class="col-8 ps-5 pe-5" style="border:3px solid rgb(5,5,111);border-radius: 100px;background: white;">
+         <br>
+         <br>
+         <h1 class="ms-2 " style="font-family:gordana;">{{user.nm}}</h1>
+         <br>
+         
+
+         <h5 style="font-weight:400;"><span style="font-weight: 600;">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.em}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span style="font-weight: 600;">Birthday&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.birthday}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span  style="font-weight: 600;">Qualifications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.qualifications}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span  style="font-weight: 600;">Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.country}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span  style="font-weight: 600;">State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.state}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span style="font-weight: 600;">Pincode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.pincode}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span style="font-weight: 600;">Hobbies&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.hobbies}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span style="font-weight: 600;">Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.gender}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span style="font-weight: 600;">Contact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.contact}}</h5>
+         <hr>
+         <h5 style="font-weight:400;"><span style="font-weight: 600;">Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>{{user.address}}</h5>
+         <hr>
+
+
+      </div>
+
+</div>
+
+<div class="col-md-3"></div>
+
+</div>   
+</div>
+</div>
+
+<script>
+
+        var fileInput = document.getElementById('file');
+
+        var fileSelectedMessage = document.getElementById('file-selected-message');
+
+        var fileNameContainer = document.getElementById('file-name');
+
+ 
+
+        fileInput.addEventListener('change', function() {
+
+            var fileName = fileInput.files[0].name;
+
+            fileNameContainer.textContent = fileName;
+
+            fileSelectedMessage.style.display = 'block';
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+{% endblock %}
+
+

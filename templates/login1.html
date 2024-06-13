@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+    <style>
+        .button:hover{color:azure}
+        ::placeholder{color:rgb(103, 111, 163)}
+    </style>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <div class="row" style="background:rgba(1,29,212,0.20);background-size: cover;height:800px">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" style="margin-top: 100px;width:1200px"  >
+            <div class="row" style="background-color: rgb(255, 255, 255); height:600px;border-radius:40px;box-shadow:0px 0px 10px white;" >
+                <div class="col-md-5 " style="position: ralative; margin-left: -10px;">
+                  <div style="border-radius:40px; background:url({%static 'images/b2.jpg' %});background-size:cover;">
+                    <div style="border-radius:40px;background: rgba(0, 0, 0, 0.50);height:600px;">
+                  <p class="ps-5  text-light" style="font-size: 50px; font-family: monospace;font-weight: 600; "> Welcome Back</p>
+                    </div></div>
+                    </div>
+                <div class="col-md-6">
+                   <form class="p-5" method="POST" action="">
+                    {% csrf_token %}
+                    <center><h1><p style="font-weight:bolder; font-size: 50px;color:rgb(1, 29, 212);font-family: gordana;">LOGIN</p></h1></center>
+                    
+                    
+                    <div class="input-group m-4 mt-5">
+                        <span class="input-group-text" id="basic-addon1"><i class="icofont-ui-message"></i></span>
+                        <input type="email" name="em" class="form-control form-control-lg shadow" placeholder="Email" required autocomplete="off" >
+                      </div>
+                      <div class="input-group  mt-5 ms-4 me-4 mb-2">
+                        <span class="input-group-text" id="basic-addon1"><i class="icofont-lock"></i></span>
+                        <input type="password" name="pw" class="form-control form-control-lg shadow" placeholder="Password" required autocomplete="off" >
+                      </div> 
+                      <a href="Forgot" style="color:rgb(1, 29, 212);font-family: gordana;margin-left: 346px;font-size:18px">Forgot Password ?</a>
+                      <br>
+                      <br>
+                      
+                      
+                      <center><button class="btn text-light mt-4 mb-3" style="background:rgb(1, 29, 212);width:170px;height:50px" type="submit">LOGIN</button></center>
+                      
+
+                    <center><p class="mt-3 ms-5 pt-3" style="border-top:1px solid gray"><b style="font-size:18px">Don't have an account?&nbsp;&nbsp;&nbsp;&nbsp;</b><a href="Register" style="font-size:18px;color:red;font-family: gordana;text-decoration: none;">Register</a></p></center>
+                    
+                   </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    
+    
+
+{% endblock %} 
+    

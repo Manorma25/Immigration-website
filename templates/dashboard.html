@@ -1,0 +1,40 @@
+{% extends 'sidebar.html'%}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div  class="pt-5 pb-5 ps-5 pe-5 " style=" background:rgba(1,29,212,0.20);height: 700px;width:100%">
+        <!--<p style="font-size:45px;font-family: gordana;;font-weight:700;color:white;text-align:center">Welcome To Iimmigraworld</p>-->
+        <div class="" style="background: rgba(5,5,111,0.70);border-radius:100px;height:600px;border:3px solid white">
+        <div class="row" >
+            <div class="col-6 pt-5">
+                
+                <p class="mb-0" style="font-size:80px;font-family: gordana;font-weight:700;color:white;text-align:center" data-aos="fade-right" data-aos-duration="900">Welcome To </p>
+                <p class=" mt-0 " style="font-size:50px;color:white;font-weight:700;text-align:center;text-shadow: 10px 10px 14px white" data-aos="fade-right" data-aos-duration="1000">ImmigraWorld</p>
+                <br>
+
+                <img class="ps-5" src="{%static 'images/g5.png' %}" height="250px" width="400px" style="margin-left: 100px;" >
+            </div>
+            <div class="col-6 ps-3 " style="margin-top:50px;" >
+                <img src="{%static 'images/b2.jpg' %}" width="500px" height="500px" style="border-radius:10px 10px 10px 10px;" data-aos="zoom-in" data-aos-duration="700">
+            </div>
+
+        </div>
+
+        
+        </div>
+
+    </div>
+    
+</body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<style>
+    .h1:hover{color:red}
+</style>
+
+<div>
+
+    <div style="background: url({%static 'images/b2.jpg' %});width:100%;height:350px;">
+    <div style="background:rgba(0, 0, 0,0.30);height:350px;width:100%;padding-top:160px">
+       <center><p style="color:white;font-size: 70px;font-weight:500"></p></center>
+    </div>  
+    </div>
+      
+</div>
+
+
+<div style="background: rgba(5,5,111,0.06);">
+<div class="container">
+    <br>
+    <br>
+    <p class="h1 mb-0" style="color:blue;font-size:65px;font-variant: small-caps;font-weight:700;font-family: garamond;"><span style="border-bottom:3px solid red;" data-aos-duration="1500" data-aos="zoom-in-right">Coaching We Offer:</span></p>
+    <div class="row mt-5">
+        {% for i in data %}
+
+        <div class="col-md-4 mt-5 mb-5 " data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom"
+        data-aos-duration="1500"
+        >
+            <div class="card  shadow" style="width: 22rem;">
+                <img src="{{i.image.url}}" class="card-img-top" alt="..." style="height:230px;width:100%">
+                <div class="card-body">
+                  <h4 class="card-title" style="color:blue">{{i.overview|truncatechars:50}}</h4>
+                  <p class="card-text">{{i.description|truncatechars:100}}</p>
+                  <a href="{% url 'coachingdetails' id=i.id %}" class="btn btn-danger">View details</a>
+                  
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+    <br>
+</div>
+</div>
+
+
+{% endblock %}
